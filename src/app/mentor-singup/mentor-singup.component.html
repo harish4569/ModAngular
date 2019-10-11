@@ -1,0 +1,84 @@
+<p  id="signup" align="center" style="color:rgba(133, 7, 66, 0.637); font-style:bold;font-size: xx-large; ">Mentors On Demand</p>
+<br><br>
+<div id="signup" style="display: flex;
+align-items: center; 
+width: 100%;
+height: 600px;
+background-color: #333127;
+">
+<div style=" width: 50%;
+height: 550px;
+margin: auto;
+border-radius: 40px;
+background-color: hsl(213, 35%, 94%);
+font-style: oblique;
+
+">
+<form [formGroup]="mentorRegForm" (ngSubmit)="createUser()" >
+
+<h2 style=" color: #333127"align="center">REGISTER FORM</h2>
+<table align="center"><tr><td>
+    <h3 for="first_name" style="color:#333127;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" align="center">First Name :</h3>
+  </td>  <td><input formControlName="firstName" type="text" name="first_name" id="first_name" required>
+    <div *ngIf="(f.firstName.errors?.required && f.firstName.touched) || (f.firstName.errors && submitted)" class="required">FirstName required</div>
+  </td>
+  </tr>
+  <tr><td><h3 for="last_name" style="color:#333127;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" align="center">Last Name :</h3></td>
+  <td><input formControlName="lastName" type="text" name="last_name" id="last_name" required> 
+    <div *ngIf="(f.lastName.errors?.required && f.lastName.touched) || (f.lastName.errors && submitted)" class="required">LastName required</div>     </td></tr>
+  
+<tr>
+<td>
+  <h3 for="your_email" style="color:#333127;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" align="center">Email   :
+
+</h3>
+</td>
+       <td>
+          <input formControlName="userName" type="email" style="background-color: rgb(252, 246, 243);border-block-color: green" name="your_email"  class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+          <div *ngIf="(f.userName.errors?.required && f.userName.touched) || (f.userName.errors && submitted)" class="required">userName as email required</div>
+        </td>
+      </tr>
+
+     
+          
+          <tr><td> <h3 for="password" style="color:#333127;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" align="center">New Password :</h3></td>
+          <td><input formControlName="password" type="password" name="password" id="password" required>
+            <div *ngIf="(f.password.errors?.required && f.password.touched) || (f.password.errors && submitted)" class="required">Password required</div></td></tr>
+          
+           
+          
+            <!-- <tr><td><h3 for="password" style="color:#333127;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" align="center">Confirm Password :</h3>
+            </td> <td><input  type="password" formControlName="password" id="comfirm_password"  required>
+              <div *ngIf="f.password.errors?.required && f.password.touched" class="required">Password required</div>
+            </td></tr> -->
+  <tr><td><h3 for="technology" style="color:#333127;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" align="center">Technology :</h3>
+  </td> <td><input type="text" formControlName="technology"  name="technology" id="technology"  >
+    <div *ngIf="(f.technology.errors?.required && f.technology.touched) || (f.technology.errors && submitted)" class="required">Technology required</div></td></tr>
+
+  <tr><td><h3 for="experience" style="color:#333127;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" align="center">Experience :</h3>
+  </td> <td><input formControlName="yearsOfExperience" type="number" name="yearsOfExperience" id="yearsOfExperience"  >
+    <div *ngIf="(f.yearsOfExperience.errors?.required && f.yearsOfExperience.touched) || (f.yearsOfExperience.errors && submitted)" class="required">Experience required</div></td></tr>
+
+  <tr><td><h3 for="starttime" style="color:#333127;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" align="center">Start Time :</h3>
+  </td> <td><input formControlName="starttime" type="time" name="starttime" id="starttime"  >
+    <div *ngIf="(f.starttime.errors?.required && f.starttime.touched) || (f.starttime.errors && submitted)" class="required">starttime required</div></td></tr>
+
+  <tr><td><h3 for="endtime" style="color:#333127;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" align="center">End Time :</h3>
+  </td> <td><input formControlName="endtime" type="time" name="endtime" id="endtime"  >
+    <div *ngIf="(f.endtime.errors?.required && f.endtime.touched) || (f.endtime.errors && submitted)" class="required">Endtime required</div></td></tr>
+
+
+</table>
+<p style="color:tomato" align="center"> <input type="checkbox" name="checkbox" > I agree to the terms and conditions</p>
+<div align="center">
+    <input  type="submit"  style="color:moccasin;border: rgb(0, 128, 6);background-color:rgb(11, 128, 0); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" name="register" value="Submit" >
+
+       &nbsp;&nbsp;&nbsp;
+        
+       <a routerLink="/home"><input type="button" style="color:moccasin;border: rgb(0, 128, 6);background-color:rgb(128, 15, 0); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" name="cancel" value="cancel" ></a>
+</div>
+
+
+</form>
+</div>
+</div>

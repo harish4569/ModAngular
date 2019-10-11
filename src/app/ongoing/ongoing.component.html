@@ -1,0 +1,39 @@
+<div  style="background-color: rgb(110, 133, 121)">
+    <a routerLink="/adminhome"><h5 style="color:RED">BACK</h5></a>
+       
+        <p   align="center" style="color:rgba(133, 7, 66, 0.637); font-style:bold;font-size: xx-large; ">Mentors On Demand</p>
+        <h3 align="center">On Going Training</h3>
+         <div  id="ON_GOING" style="display: flex;
+         align-items: center; 
+         width: 100%;
+         height: 400px;
+         background-color:  #ccc9ba;
+         ">
+           <div id="ON_GOING"  style=" width: 50%;
+           height: 360px;
+           margin: auto;
+           border-radius: 40px;
+           background-color: #2ca84b;
+           font-style: oblique;
+           ">
+             <br>
+               <table border="2px" align="center">
+                   <tr>
+                       <th>Course</th>
+                       <th>Start Date</th>
+                       <th>End Date</th>
+                       <th>Status</th>
+                    </tr>  
+                      
+                    <tr *ngFor="let training of trainings">
+                        <td *ngIf="training.status=='ongoing'">{{ training.name }}</td>
+                        <td *ngIf="training.status=='ongoing'">{{ training.startDate }}</td>
+                        <td *ngIf="training.status=='ongoing'">{{ training.endDate }}</td>
+                        <td *ngIf="training.status=='ongoing'">{{ training.status }}</td>
+                      </tr>
+                     
+               </table>
+               
+           </div>
+        </div>
+</div>

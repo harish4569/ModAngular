@@ -1,0 +1,43 @@
+<h2 align = "center">Technologies</h2> 
+
+<div class="container">
+  <br>
+  <a routerLink="/adminhome"><h3><b>Back</b></h3></a>
+     
+  <br>      
+  <table class="table table-hover table-dark" border="2px">
+ 
+      <tr>
+        <th>Technology</th>
+        <th>Mentor </th>
+        <th>Fees</th>
+        <th>Commission</th>
+        <th>Email</th>
+        
+      </tr>
+      <tr *ngFor="let tech of techlist">
+        <td >{{ tech.technology }}</td>
+        <td >{{ tech.mentorname }}</td>
+        <td ><input type="text" [(ngModel)]="tech.fees"></td>
+        <td >{{ tech.comm }}</td>
+        <td>{{ tech.email }}</td>
+        <td ><input type="submit" value="remove" (click)="remove(tech)"></td>
+        <td ><input type="submit" value="update" (click)="edit(tech)"></td>
+      </tr>
+     
+     
+  
+  </table>
+
+  <a routerLink="/addtech"><button style="color: rgb(55, 5, 192)"  value="Add" >Add</button></a>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

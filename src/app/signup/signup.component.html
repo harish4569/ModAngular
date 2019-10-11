@@ -1,0 +1,84 @@
+<p  id="signup" align="center" style="color:rgba(133, 7, 66, 0.637); font-style:bold;font-size: xx-large; ">Mentors On Demand</p>
+<br><br>
+
+<div id="signup" style="display: flex;
+align-items: center; 
+width: 100%;
+height: 600px;
+background-color: #333127;
+">
+<div style="
+height: 55px;
+margin: auto;
+border-radius: 40px;
+align-items: left;
+background-color: crimson;
+font-style: oblique;
+">
+<a routerLink="/mentor"><input style="background-color: crimson;height: 55px"
+  type="button" name="Mentor_Register" value="Mentor Registor"></a>
+</div>
+<div style=" width: 50%;
+height: 550px;
+margin: auto;
+border-radius: 40px;
+background-color: hsl(213, 35%, 94%);
+font-style: oblique;
+
+">
+<form [formGroup]="registerForm"  (ngSubmit)="createUser()">
+
+<h2 style=" color: #333127"align="center">REGISTER FORM</h2>
+<table align="center"><tr><td>
+<h3 for="first_name" style="color:#333127;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" align="center">First Name :</h3>
+</td>  <td><input formControlName="firstName" type="text"  id="first_name" required>
+<div *ngIf="(f.firstName.errors?.required && f.firstName.touched) || (f.firstName.errors && submitted)" class="required">FirstName required</div>
+</td>
+</tr>
+<tr><td><h3 for="last_name" style="color:#333127;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" align="center">Last Name :</h3></td>
+<td><input formControlName="lastName" type="text" id="last_name" required> 
+  <div *ngIf="(f.lastName.errors?.required && f.lastName.touched) || (f.lastName.errors && submitted)" class="required">LastName required</div>     </td></tr>
+
+<tr>
+<td>
+  <h3 for="your_email" style="color:#333127;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" align="center">Email   :
+
+</h3>
+</td>
+       <td>
+          <input formControlName="userName" type="text" style="background-color: rgb(252, 246, 243);border-block-color: green" name="your_email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+          <div *ngIf="(f.userName.errors?.required && f.userName.touched) || (f.userName.errors && submitted)" class="required">Username as Email required</div>
+        </td>
+      </tr>
+<!-- 
+<tr><td> <h3 for="password" style="color:#333127;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" align="center">New Password :</h3></td>
+<td><input formControlName="password" type="password" id="password" required>
+  <div *ngIf="(f.password.errors?.required && f.password.touched) || (f.password.errors && submitted)" class="required">Password required</div></td></tr> -->
+
+ 
+
+  <tr><td><h3 for="password" style="color:#333127;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" align="center"> Password :</h3>
+  </td> <td><input  type="password" formControlName="password" id="comfirm_password"  required>
+    <div *ngIf="(f.password.errors?.required && f.password.touched) || (f.password.errors && submitted)" class="required">Password required</div>
+  </td></tr>
+
+
+
+
+
+
+
+</table>
+<p style="color:tomato" align="center"> <input type="checkbox" name="checkbox" required> I agree to the terms and conditions</p>
+<div align="center">
+        <input  type="submit" style="color:moccasin;border: rgb(0, 128, 6);background-color:rgb(11, 128, 0); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" name="register" value="Submit" >
+       &nbsp;&nbsp;&nbsp;
+        
+        <a routerLink="/login"><input type="button" style="color:moccasin;border: rgb(0, 128, 6);background-color:rgb(128, 15, 0); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" name="cancel" value="cancel" ></a>
+</div>
+
+
+
+</form>
+</div>
+</div>

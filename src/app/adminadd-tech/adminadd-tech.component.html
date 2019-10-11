@@ -1,0 +1,113 @@
+<form [formGroup]="techForm" (ngSubmit)="createTech()" >
+    <table>
+            <!-- <label class="radio-inline"><input type="radio" name="optradio" value=1>Admin</label>&nbsp; -->
+            
+            <!-- <label class="radio-inline"><input type="radio" value=2 formControlName="role">User</label>&nbsp;
+            <label class="radio-inline"><input type="radio" value=3 formControlName="role">Mentor</label> -->
+           <tr>
+             <td> <label for="technology">Technology </label></td>
+             <td>
+                <input class="span4" formControlName="technology" type="text" class="form-control"  aria-describedby="technology" placeholder="technology" required>
+                <div *ngIf="(f.technology.errors?.required && f.technology.touched) || (f.technology.errors && submitted)" class="required">Technology required</div>
+              </td>
+           </tr>
+               
+            
+                
+          
+           
+              
+           
+            <tr>
+              <td>
+                  <label for="exampleInputYears"> Experience</label>
+              </td>
+              <td>
+                  <input class="span4" formControlName="experience" type="number" class="form-control"  id="exampleInputYears" placeholder=" Experience" required>
+                  <div *ngIf="(f.experience.errors?.required && f.experience.touched) || (f.experience.errors && submitted)" class="required">Experience required</div>
+              </td>
+            </tr>
+             
+             <tr>
+               <td>
+                  <label for="mentorname"> Mentor Name</label>
+
+               </td>
+               <td>
+                  <input class="span4" formControlName="mentorname" type="text" class="form-control"   placeholder=" name" required>
+                  <div *ngIf="(f.mentorname.errors?.required && f.mentorname.touched) || (f.mentorname.errors && submitted)" class="required">mentorname required</div>
+               </td>
+             </tr>
+             <tr>
+              <td>
+                 <label for="email"> Email</label>
+
+              </td>
+              <td>
+                 <input class="span4" formControlName="email" type="email" class="form-control"   placeholder=" Email" required>
+                 <div *ngIf="(f.email.errors?.required && f.email.touched) || (f.email.errors && submitted)" class="required">email required</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                 <label for="fees"> fees</label>
+
+              </td>
+              <td>
+                 <input class="span4" formControlName="fees" type="number" class="form-control"   placeholder=" fees" required>
+                 <div *ngIf="(f.fees.errors?.required && f.fees.touched) || (f.fees.errors && submitted)" class="required">fees required</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                 <label for="comm"> Commission</label>
+
+              </td>
+              <td>
+                 <input class="span4" formControlName="comm" type="number" class="form-control"   placeholder=" commisson" required>
+                 <div *ngIf="(f.comm.errors?.required && f.comm.touched) || (f.comm.errors && submitted)" class="required">commisson required</div>
+              </td>
+            </tr>
+           
+        
+            
+           
+                   
+                <!-- <tr>
+                  <td>
+                      <label for="exampleInputTimings">Timings</label><hr>
+
+                  </td>
+                  <td>
+                      <input type="time" formControlName="starttime" atp-time-picker formControlName = "from" placeholder="from" required/>
+                      <div *ngIf="(f.starttime.errors?.required && f.starttime.touched) || (f.starttime.errors && submitted)" class="required">starttime required</div>
+                  </td>
+                  <td>
+                      <input type="time" formControlName="endtime" atp-time-picker formControlName = "to" placeholder="to" required/>
+                      <div *ngIf="(f.endtime.errors?.required && f.endtime.touched) || (f.endtime.errors && submitted)" class="required">endtime required</div>
+                  </td>
+                </tr>  -->
+          
+              
+              
+           
+            <tr>
+              <td>
+                 
+
+              </td>
+              <td>
+             
+
+              </td>
+            </tr>
+            
+          </table>
+          
+          <div align="left">
+            <input type="submit" style="color:moccasin;border: rgb(0, 128, 6);background-color:rgb(11, 128, 0); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" name="register" value="Add" >
+           &nbsp;&nbsp;&nbsp;
+            
+            <input routerLink="/adminhome" type="button" style="color:moccasin;border: rgb(0, 128, 6);background-color:rgb(128, 15, 0); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" value="cancel">
+    </div>
+    </form>

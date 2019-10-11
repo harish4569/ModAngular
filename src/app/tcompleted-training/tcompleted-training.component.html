@@ -1,0 +1,39 @@
+<h2 align = "center">Completed Trainings</h2> 
+<div class="container">
+  <br>
+  <a routerLink="/trainerhome"><h3><b>Back</b></h3></a>
+     
+  <br>      
+  <table class="table table-hover table-dark" border="2px">
+ 
+      <tr>
+        <th>CourseName</th>
+        <th>Status</th>
+        <th>Percentage</th>
+        <th>Rating</th>
+        <th> Overall Grade</th>
+      </tr>
+  
+      
+      <tr *ngFor="let trainings of cmtrainings">
+        <td *ngIf="trainings.progress==100">{{ trainings.name }}</td>
+        <td *ngIf="trainings.progress==100">{{ trainings.status }}</td>
+        <td *ngIf="trainings.progress==100">{{trainings.progress}}</td>
+        <td *ngIf="trainings.progress==100">{{ trainings.rating }}</td>
+        <td *ngIf="trainings.progress==100">{{ trainings.grade }}</td>
+      </tr>
+     
+       
+  </table>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

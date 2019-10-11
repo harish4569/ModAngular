@@ -1,0 +1,96 @@
+<div  style="background-color: rgb(192, 178, 133)">
+    <a routerLink="/adminhome"><h5 style="color:RED">BACK</h5></a>
+    <div style="background-color:rgb(105, 110, 83)">
+        <p align="center" style="color:rgba(133, 7, 66, 0.637); font-style:bold;font-size: xx-large; ">Mentors On Demand</p>
+        <h2 align="center" > Users</h2>
+    </div>
+        <div  style="display: flex;
+        align-items: center; 
+        width: 100%;
+        height: auto;
+        background-color:   rgb(192, 178, 133);
+        padding:auto;
+        ">
+        
+       
+            <div >
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Active Users
+                      </button>
+                    </h2>
+                  </div>
+              
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body" >
+                        <h3 align="center">Active Users</h3>
+                        <div >
+                        <table border="2px" align="center" class="table-dark">
+                            <tr>
+                              <th>Id</th>
+                                <th>Name</th>
+                                <th>Categeory</th>
+                                
+                                 <th>Status</th>
+                            </tr>
+                            <tr *ngFor="let users of userlist" >
+                                <td *ngIf="users.active">{{users.id}}</td>
+                                <td *ngIf="users.active">{{users.firstName}}</td>
+                                <td *ngIf="users.active">{{users.role}}</td>
+                                
+                                <td *ngIf="users.active"><input type="submit" value="Block" (click)="submit(users)"></td>
+                            </tr>
+                            
+                         
+                        </table>
+                        </div>
+                    </div>
+                  </div>
+                </div> 
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Blocked Users
+                      </button>
+                    </h2>
+                   </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <h3 align="center">Blocked Users</h3>
+                        <div >
+                        <table border="2px" align="center" class="table-dark">
+                            <tr>
+                                <th>id</th>
+                                <th>Name</th>
+                                <th>Categeory</th>
+
+                                 <th>Status</th>
+                            </tr>
+                            <tr *ngFor="let users of userlist"  >
+                              <td *ngIf="!users.active">{{users.id}}</td>
+                              <td *ngIf="!users.active">{{users.firstName}}</td>
+                              <td *ngIf="!users.active">{{users.role}}</td>
+                                
+                                <td *ngIf="!users.active"><input type="submit" value="UnBlock" (click)="submit(users)"></td>
+                            </tr>
+                            
+                         
+                         
+                        </table>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+               
+            </div>
+          
+          
+        
+        </div><br><br><br>
+</div>
